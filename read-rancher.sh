@@ -32,7 +32,7 @@ echo "-----------------"
 
 read update
 
-if [[$update == "yes"]] 
+if [[ $update == "yes" ]] 
 then
     kubectl apply -f https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/rancher-update.yaml
 else
