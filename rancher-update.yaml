@@ -1,6 +1,3 @@
-variables:
-  version: rancher-2.7.9
-  image:  rancher/rancher:v2.7.9
 ---
 # Source: rancher/templates/priorityClass.yaml
 apiVersion: scheduling.k8s.io/v1
@@ -10,7 +7,7 @@ metadata:
   namespace: cattle-system  
   labels: 
     app: rancher
-    chart: {{ variables.version }}
+    chart: {{ .value.version }}
     heritage: Helm
     release: rancher
 value: 1000000000
@@ -25,7 +22,7 @@ metadata:
   namespace: cattle-system
   labels:
     app: rancher
-    chart: {{ variables.version }}
+    chart: {{ .value.version }}
     heritage: Helm
     release: rancher
 ---
@@ -37,7 +34,7 @@ metadata:
   namespace: cattle-system
   labels: 
     app: rancher
-    chart: {{ variables.version }}
+    chart:  {{ .value.version }}
     heritage: Helm
     release: rancher
     app.kubernetes.io/part-of: "rancher"
@@ -52,7 +49,7 @@ metadata:
   namespace: cattle-system
   labels:
     app: rancher
-    chart: {{ variables.version }}
+    chart:  {{ .value.version }}
     heritage: Helm
     release: rancher
 subjects:
@@ -72,7 +69,7 @@ metadata:
   namespace: cattle-system
   labels:
     app: rancher
-    chart: {{ variables.version }}
+    chart:  {{ .value.version }}
     heritage: Helm
     release: rancher
 spec:
@@ -97,7 +94,7 @@ metadata:
   annotations:
   labels:
     app: rancher
-    chart: {{ variables.version }}
+    chart:  {{ .value.version }}
     heritage: Helm
     release: rancher
 spec:
@@ -144,7 +141,7 @@ spec:
           effect: "NoSchedule"
           operator: "Equal"
       containers:
-      - image: {{ variables.image }}
+      - image: {{ .value.image }}
         imagePullPolicy: IfNotPresent
         name: rancher
         ports:
@@ -184,7 +181,7 @@ metadata:
   name: rancher
   labels:
     app: rancher
-    chart: {{ variables.version }}
+    chart:  {{ .value.version }}
     heritage: Helm
     release: rancher
 spec:
