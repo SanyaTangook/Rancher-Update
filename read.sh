@@ -34,7 +34,8 @@ read update
 
 if [[$update == "yes"]] 
 then
-    curl -o rancher-update.yaml https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/rancher-update.yaml
+    echo "Rancher V.2.7.5"
+    kubectl apply -f https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/rancher-update.yaml
 else
     echo "STOP"
 fi
