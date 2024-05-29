@@ -7,7 +7,7 @@ metadata:
   namespace: cattle-system  
   labels: 
     app: rancher
-    chart: rancher-2.7.5
+    chart: rancher-2.8.4
     heritage: Helm
     release: rancher
 value: 1000000000
@@ -22,7 +22,7 @@ metadata:
   namespace: cattle-system
   labels:
     app: rancher
-    chart: rancher-2.7.5
+    chart: rancher-2.8.4
     heritage: Helm
     release: rancher
 ---
@@ -34,7 +34,7 @@ metadata:
   namespace: cattle-system
   labels: 
     app: rancher
-    chart: rancher-2.7.5
+    chart: rancher-2.8.4
     heritage: Helm
     release: rancher
     app.kubernetes.io/part-of: "rancher"
@@ -49,7 +49,7 @@ metadata:
   namespace: cattle-system
   labels:
     app: rancher
-    chart: rancher-2.7.5
+    chart: rancher-2.8.4
     heritage: Helm
     release: rancher
 subjects:
@@ -69,7 +69,7 @@ metadata:
   namespace: cattle-system
   labels:
     app: rancher
-    chart: rancher-2.7.5
+    chart: rancher-2.8.4
     heritage: Helm
     release: rancher
 spec:
@@ -94,7 +94,7 @@ metadata:
   annotations:
   labels:
     app: rancher
-    chart: rancher-2.7.5
+    chart: rancher-2.8.4
     heritage: Helm
     release: rancher
 spec:
@@ -141,7 +141,7 @@ spec:
           effect: "NoSchedule"
           operator: "Equal"
       containers:
-      - image: rancher/rancher:v2.7.5
+      - image: rancher/rancher:v2.8.4
         imagePullPolicy: IfNotPresent
         name: rancher
         ports:
@@ -181,7 +181,7 @@ metadata:
   name: rancher
   labels:
     app: rancher
-    chart: rancher-2.7.5
+    chart: rancher-2.8.4
     heritage: Helm
     release: rancher
 spec:
