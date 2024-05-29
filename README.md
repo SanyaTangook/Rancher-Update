@@ -5,15 +5,15 @@
 curl -o read-rancher.sh https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/read.sh
 ```
 ## Rancher Supported AWS EKS
-Kubernetes | rancher |
-|:-------:|:-------:|
-|v1.23-v1.24| 2.7.4|
-|v1.23-v1.26| 2.7.5|
-|v1.23-v1.26| 2.7.9|
-|v1.25-v1.27| 2.8.1|
-|v1.25-v1.27| 2.8.2|
-|v1.25-v1.28| 2.8.3|
-|v1.25-v1.28| 2.8.4|
+Kubernetes | rancher | in yaml|
+|:-------:|:-------:|:---:|
+|v1.23-v1.24| 2.7.4|  |
+|v1.23-v1.26| 2.7.5|  |
+|v1.23-v1.26| 2.7.9| :heavy_check_mark:|
+|v1.25-v1.27| 2.8.1|  |
+|v1.25-v1.27| 2.8.2|  |
+|v1.25-v1.28| 2.8.3|  |
+|v1.25-v1.28| 2.8.4|  |
 
 ## Edit Version Rancher
 ```bash
