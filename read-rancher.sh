@@ -29,7 +29,7 @@ echo "-----------------"
 kubectl  get Issuer | grep -w --color 'rancher'
 echo "-----------------"
 
-
+echo "input Yes to Update"
 read update
 
 if [[ $update == "yes" ]] 
