@@ -28,6 +28,8 @@ curl -O  https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/ranc
 - vim or nano read-update.sh
 ```bash
 vim read-update.sh
+or
+nano read-update.sh
 ```
 - Edit tng all kind
 ```yaml
@@ -43,4 +45,6 @@ kubectl apply -f read-update.sh
 - Wait for Rancher to be rolled out
 ```bash
 kubectl -n cattle-system rollout status deploy/rancher
+or
+kubectl get all -n cattle-system
 ```
