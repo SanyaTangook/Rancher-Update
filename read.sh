@@ -34,9 +34,7 @@ read update
 
 if [[$update == "yes"]] 
 then
-    echo "Rancher V.2.7.5"
     kubectl apply -f https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/rancher-update.yaml
-    kubectl -n cattle-system rollout status deploy/rancher
 else
     echo "STOP"
 fi
