@@ -187,3 +187,4 @@ metadata:
 spec:
   ca:
     secretName: tls-rancher
+---
