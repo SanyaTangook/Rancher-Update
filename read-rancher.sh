@@ -34,7 +34,7 @@ read update
 
 if [[ $update == "yes" ]] 
 then
-    kubectl apply -f https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/rancher-update.yaml
+    kubectl apply -f https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/rancher-update.yaml --save-config
 else
     echo "STOP"
 fi

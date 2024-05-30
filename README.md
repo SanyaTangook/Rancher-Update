@@ -23,7 +23,7 @@ Kubernetes | rancher | in yaml|
 
 ## Edit Version Rancher
 ```bash
-curl -O  https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/rancher-update.yaml
+curl -fsSL -o rancher-update.yaml https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/rancher-update.yaml
 ```
 - vim or nano read-update.sh
 ```bash
