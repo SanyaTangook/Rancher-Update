@@ -2,7 +2,7 @@
 
 > Dowload Shell Scripting
 ```bash
-curl -O https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/read-rancher.sh
+curl -fsSL -o read-rancher.sh https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/read-rancher.sh
 ```
 - Run Shell
 ```bash
