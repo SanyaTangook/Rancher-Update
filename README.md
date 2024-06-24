@@ -46,3 +46,12 @@ kubectl -n cattle-system rollout status deploy/rancher
 or
 kubectl get all -n cattle-system
 ```
+
+```bash
+helm get values rancher -n cattle-system -o yaml > values.yaml
+
+helm upgrade rancher rancher-stable/rancher \
+  --namespace cattle-system \
+  -f values.yaml \
+  --version={version}
+```
