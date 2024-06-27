@@ -1,16 +1,48 @@
 # Rancher-Update
 
-> Dowload Shell Scripting
-```bash
-curl -fsSL -o read-rancher.sh https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/read-rancher.sh
-```
+<details >
+<summary>Shell Scripting</summary>
+
+- Dowload Shell Scripting
+
+  ```bash
+  curl -fsSL -o read-rancher.sh https://raw.githubusercontent.com/SanyaTangook/Rancher-Update/main/read-rancher.sh
+  ```
+
 - Run Shell
+
+  ```bash
+  chmod u+x read-rancher.sh
+  ./read-rancher.sh
+  ```
+
+</details>
+<details>
+<summary>Use Helm</summary>
+
+- install Helm
+
 ```bash
-chmod u+x read-rancher.sh
-./read-rancher.sh
+> curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+> chmod 700 get_helm.sh
+> ./get_helm.sh
 ```
 
+> Back Up Config rancher
+ 
+```bash
+helm get values rancher -n cattle-system -o yaml > values.yaml
+
+helm upgrade rancher rancher-stable/rancher \
+  --namespace cattle-system \
+  -f values.yaml \
+  --version={version}
+```
+
+</details>
+
 ## Rancher Supported AWS EKS
+
 Kubernetes | rancher | in yaml|
 |:-------:|:-------:|:---:|
 |v1.23-v1.24| 2.7.4|  |
@@ -21,45 +53,38 @@ Kubernetes | rancher | in yaml|
 |v1.25-v1.28| 2.8.3|  |
 |v1.25-v1.28| 2.8.4|  |
 
-## Edit Version Rancher
+## if you use Shell Scripting
+
+> Edit Version Rancher
 
 - vim or nano read-update.sh
+
 ```bash
 vim read-update.sh
 or
 nano read-update.sh
 ```
+
 - Edit tng all kind
+
 ```yaml
 chart: rancher-{Version}
 and
 containers:
       - image: rancher/rancher: {Version}
 ```
+
 - apply file Rancher
+  
 ```bash
 kubectl apply -f read-update.sh
+
 ```
+
 - Wait for Rancher to be rolled out
+  
 ```bash
 kubectl -n cattle-system rollout status deploy/rancher
 or
 kubectl get all -n cattle-system
-```
-
-- install Helm
-```bash
-> curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-> chmod 700 get_helm.sh
-> ./get_helm.sh
-```
-
-
-```bash
-helm get values rancher -n cattle-system -o yaml > values.yaml
-
-helm upgrade rancher rancher-stable/rancher \
-  --namespace cattle-system \
-  -f values.yaml \
-  --version={version}
 ```
