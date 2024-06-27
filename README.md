@@ -29,7 +29,7 @@
 ```
 
 > Back Up Config rancher
- 
+
 ```bash
 helm get values rancher -n cattle-system -o yaml > values.yaml
 
@@ -88,3 +88,19 @@ kubectl -n cattle-system rollout status deploy/rancher
 or
 kubectl get all -n cattle-system
 ```
+
+### Upgrade Rancher to the latest version with all your settings.
+
+Take all the values from the previous step and append them to the command using `--set key=value.`
+
+For Kubernetes v1.25 or later, set `global.cattle.psp.enabled` to `false` when using Rancher v2.7.2-v2.7.4. This is not necessary for Rancher v2.7.5 and above, but you can still manually set the option if you choose.
+
+```bash
+helm upgrade rancher rancher-<CHART_REPO>/rancher \
+  --namespace cattle-system \
+  -f values.yaml \
+  --set global.cattle.psp.enabled=false \
+  --version=2.6.8
+```
+
+Ref : [RancherDoc](https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/upgrades)
