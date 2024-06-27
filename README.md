@@ -36,6 +36,7 @@ helm get values rancher -n cattle-system -o yaml > values.yaml
 helm upgrade rancher rancher-stable/rancher \
   --namespace cattle-system \
   -f values.yaml \
+  --set global.cattle.psp.enabled=false \
   --version={version}
 ```
 
