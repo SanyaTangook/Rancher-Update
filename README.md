@@ -17,7 +17,8 @@
   ```
 
 </details>
-<details>
+
+<details open>
 <summary>Use Helm (recommend) </summary>
 
 - install Helm
