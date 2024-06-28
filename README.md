@@ -18,7 +18,7 @@
 
 </details>
 <details>
-<summary>Use Helm</summary>
+<summary>Use Helm (recommend) </summary>
 
 - install Helm
 
@@ -55,8 +55,8 @@ Kubernetes | rancher | in yaml|
 |v1.25-v1.28| 2.8.4|  |
 
 ## if you use Shell Scripting
-
-> Edit Version Rancher
+<details>
+<summary> Edit Version Rancher </summary>
 
 - vim or nano read-update.sh
 
@@ -81,7 +81,7 @@ containers:
 kubectl apply -f read-update.sh
 
 ```
-
+</details>
 - Wait for Rancher to be rolled out
   
 ```bash
