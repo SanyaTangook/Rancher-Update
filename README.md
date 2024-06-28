@@ -81,8 +81,10 @@ containers:
 kubectl apply -f read-update.sh
 
 ```
+
 </details>
-- Wait for Rancher to be rolled out
+
+## Wait for Rancher to be rolled out
   
 ```bash
 kubectl -n cattle-system rollout status deploy/rancher
